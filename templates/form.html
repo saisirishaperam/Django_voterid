@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="{% static 'form.css' %}">
 </head>
 <body>
-    <input type="password" name="admin_password" placeholder="Enter Admin Password" required>
-    <title>Voter Form</title>
+    
     <form method="post" action="{% url 'card' %}" enctype="multipart/form-data">
+        <label>Admin Password</label>
+    <input type="password" name="admin_password" required>
 
         {% csrf_token %}
 

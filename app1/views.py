@@ -20,10 +20,10 @@ def detals(request):
 
 # @login_required(login_url='login')
 
-ADMIN_PASSWORD = '1234'
+ADMIN_PASSWORD = 'admin123'
 def cards(request):
     if request.method == 'POST':
-        if request.POST.get('admin_pass') != ADMIN_PASSWORD:
+        if request.POST.get('admin_password') != ADMIN_PASSWORD:
             form = voter_form(request.POST, request.FILES)
             form.add_error(None, "Invalid password. Access denied.")
             return render(request, 'form.html', {'form': form})
