@@ -1,7 +1,11 @@
 /* General body styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f8;
+    background-image: url('https://static.toiimg.com/thumb/msid-109579905,width-400,height-225,resizemode-72/109579905.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,32 +18,33 @@ body {
 /* Form container */
 form {
     background-color: #ffffff;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 18px 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgb(0, 0, 0);
     width: 80%;
-    max-width: 500px;
+    max-width: 380px;
 }
 
 /* Form labels */
 form label {
     display: block;
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-weight: 500;
+    margin-bottom: 1px;
 }
 
 /* Form inputs and select */
 form input[type="text"],
+form input[type="password"], 
 form input[type="date"],
 form input[type="file"],
 form select,
 form textarea {
     width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 15px;
+    padding: 8px 12px;
+    margin-bottom: 7px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 13px;
     box-sizing: border-box;
 }
 
@@ -63,9 +68,10 @@ form button[type="submit"]:hover {
 /* Error messages from Django forms */
 form .errorlist {
     color: red;
-    margin-top: -10px;
-    margin-bottom: 10px;
+    /* margin-top: -10px;
+    margin-bottom: 10px; */
     font-size: 13px;
+    margin: 2px 0 6px 0;
 }
 
 /* Responsive adjustments */

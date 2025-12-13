@@ -10,11 +10,11 @@
 <body>
     
     <form method="post" action="{% url 'card' %}" enctype="multipart/form-data">
+        <h4>Voter Form</h4>
         <label>Admin Password</label>
-    <input type="password" name="admin_password" required>
-
+        <input type="password" name="admin_password" required>
         {% csrf_token %}
-
+            
         {{ form.as_p }}
         <button type="submit">CREATE CARD</button>
     </form>
