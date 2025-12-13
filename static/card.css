@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://5.imimg.com/data5/SELLER/Default/2023/5/304549625/VO/LC/XK/104731012/whatsapp-image-2023-05-01-at-14-38-28-1-.jpeg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Card container */
+.card {
+    background: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.866);
+    text-align: center;
+}
+
+/* Title */
+.card h4 {
+    margin-bottom: 20px;
+    background-color: #214068;
+    color: #c0c8d4;
+    border-radius: 5px;
+    margin: 0px 5px;
+    margin-bottom: 13px;
+    padding: 3px;
+}
+
+/* Text styling */
+.card p {
+    font-size: 13px;
+    text-align: left;
+    margin: 6px 0;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #264e86;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #1c3a63;
+}
+
+
+/* Styling each field row */
+.detail-row {
+    background: #c9cee0;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 5px solid #264e86;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Label (Name:, Age:, Address:) */
+.detail-label {
+    font-weight: bold;
+    color: #1c3a63;
+}
+
+/* Value (actual data) */
+.detail-value {
+    font-weight: normal;
+    color: #333;
+}
+
+.image-box {
+    background-color: #e0e0e0;   /* light gray background */
+    padding: 10px;              /* space around the image */
+    width: fit-content;         /* shrink to image size */
+    border-radius: 8px;         /* smooth corners */
+    display: inline-block;
+}
+
+.image-box img {
+    width: 150px;
+    display: block;
+}
+
