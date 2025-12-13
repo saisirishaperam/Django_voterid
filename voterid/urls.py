@@ -19,7 +19,7 @@ from django.urls import path
 from app1.views import detals,cards, lst_vote, fronhome, getvoter
 from django.conf.urls.static import static
 from django.conf import settings
-from django.contrib.auth import views as auth_views
+# from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,7 +28,7 @@ urlpatterns = [
     path('card',cards, name= 'card'),
     path('list',lst_vote, name='list'),
     path('getvoter/<int:id>/', getvoter, name='getvoter'),
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    # path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
 
 ]
 
