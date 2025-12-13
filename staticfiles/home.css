@@ -1,0 +1,35 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQTRyvLlhysy7OwSU5SFVuDPX-SSUfTpa7UwN5wP5UeSpENBIe_y7TaPqg--D7Ct9-r9_UWMLQ');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Style for links as buttons */
+a {
+    text-decoration: none;
+    color: white;
+    background-color: #033567;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 18px;
+}
+
+/* Hover effect for links */
+a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Optional: add a container for better layout */
+.container {
+    text-align: center;
+}
