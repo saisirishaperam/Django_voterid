@@ -32,7 +32,8 @@ def cards(request):
         else:
 
             return render(request, 'form.html', {'form' : form})
-
+    form = voter_form()
+    return render(request, 'form.html', {'form': form})
 
 def lst_vote(request):
     data = vote.objects.all()
