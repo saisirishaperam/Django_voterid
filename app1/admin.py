@@ -5,6 +5,6 @@ from app1.models import vote
 
 class voteadmin(admin.ModelAdmin):
 
-        list_display = ['name','gender','date_of_birth','address','image']
+        list_display = ['name','gender','date_of_birth','aadhar','address','image']
 
 admin.site.register(vote, voteadmin)

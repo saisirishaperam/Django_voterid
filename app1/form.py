@@ -8,7 +8,7 @@ class voter_form(forms.ModelForm):
 
     class Meta:
         model = vote
-        fields = ('name','gender','date_of_birth','address','image')
+        fields = ('name','gender','date_of_birth','aadhar','address','image')
 
         widgets = {
             'date_of_birth': forms.DateInput(attrs={
@@ -33,15 +33,3 @@ class voter_form(forms.ModelForm):
 
         return cleaned_data
 
-
-    # # Generate unique voter ID
-    # if not instance.voter_id:
-    #     while True:
-    #         random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
-    #         if not vote.objects.filter(voter_id=random_id).exists():
-    #             instance.voter_id = random_id
-    #             break
-
-    # if commit:
-    #     instance.save()
-    # return instance
