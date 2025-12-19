@@ -75,13 +75,27 @@ WSGI_APPLICATION = 'voterid.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+
+import os 
+if os.environ.get("RENDER"): 
+    # Production (Render + Railway MySQL) 
+    DATABASES = { 
+        "default": { 
+            "ENGINE": "django.db.backends.mysql", 
+            "NAME": os.environ.get("MYSQLDATABASE"), 
+            "USER": os.environ.get("MYSQLUSER"), 
+            "PASSWORD": os.environ.get("MYSQLPASSWORD"), 
+            "HOST": os.environ.get("MYSQLHOST"), 
+            "PORT": os.environ.get("MYSQLPORT", "3306"), 
+        } 
+    } 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
