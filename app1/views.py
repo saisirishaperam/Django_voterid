@@ -54,7 +54,3 @@ def getvoter(request,id):
         voter = get_object_or_404(vote, id=id)
         return render(request, 'card.html', {'data' : voter})
     
-def st_del(request,id):
-    data = vote.objects.get(id=id)
-    data.delete()
-    return redirect('list')
