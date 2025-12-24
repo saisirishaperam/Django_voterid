@@ -31,18 +31,15 @@ def cards(request):
 
         form = voter_form(request.POST, request.FILES)
         if form.is_valid():
-            obj = form.save()
+            obj = form.save(commit=False)
 
             #Genertae unque voter id
             obj.voter_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=9))
             obj.save()
             return render(request, 'card.html', {'data' : obj})
-        else:
-
+        # else:
             return render(request, 'form.html', {'form' : form})
         
-    # form = voter_form()
-    # return render(request, 'card.html', {'data' : obj})
 
 def lst_vote(request):
     data = vote.objects.all()
