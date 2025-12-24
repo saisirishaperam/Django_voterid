@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
 from app1.models import vote
 from app1.form import voter_form
 import random, string
@@ -53,3 +54,7 @@ def getvoter(request,id):
         voter = get_object_or_404(vote, id=id)
         return render(request, 'card.html', {'data' : voter})
     
+
+def clear_all_data(request):
+    vote.objects.all().delete()
+    return HttpResponse("All data deleted")
