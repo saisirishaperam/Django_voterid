@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app1.views import detals,cards, lst_vote, fronhome, getvoter
+from app1.views import detals,cards, lst_vote, fronhome, getvoter,st_del
 from django.conf.urls.static import static
 from django.conf import settings
 # from django.contrib.auth import views as auth_views
@@ -28,6 +28,7 @@ urlpatterns = [
     path('card',cards, name= 'card'),
     path('list',lst_vote, name='list'),
     path('getvoter/<int:id>/', getvoter, name='getvoter'),
+    path('stu_del/<int:id>/',st_del, name='stu_del'),
     # path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
 
 ]

@@ -21,6 +21,7 @@
             <th>Address</th>
             <th>voter_id</th>
             <th>Image</th>
+            <th>Delete</th>
         </tr>
         {% for x in data %}
         <tr>
@@ -36,6 +37,8 @@
                     <img src="{{ x.image.url }}" class="profile-img"></a>
                 {% endif %}
             </td>
+            <td><a href="{% url 'stu_del' x.id %}" onclick="return confirm('Conform to Delete?')">🗑️ Delete</a></td>
+
         </tr>
         {% endfor %}
     </table>
