@@ -56,7 +56,5 @@ def getvoter(request,id):
 
 def delete_vote(request, id):
     voter = get_object_or_404(vote, id=id)
-
-    if request.method == "POST":
-        voter.delete()
-        return redirect('list_vote')
+    voter.delete()
+    return redirect('list_vote')
