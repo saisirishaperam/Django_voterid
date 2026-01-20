@@ -24,23 +24,27 @@ def detals(request):
 ADMIN_PASSWORD = 'admin123'
 def cards(request):
     if request.method == 'POST':
+
         if request.POST.get('admin_password') != ADMIN_PASSWORD:
             form = voter_form(request.POST, request.FILES)
             form.add_error(None, "Invalid password. Access denied.")
             return render(request, 'form.html', {'form': form})
 
-
         form = voter_form(request.POST, request.FILES)
         if form.is_valid():
             obj = form.save(commit=False)
 
-            #Genertae unque voter id
+            # Generate unique voter id
             obj.voter_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=9))
             obj.save()
-            return render(request, 'card.html', {'data' : obj})
-        # else:
-            return render(request, 'form.html', {'form' : form})
-        
+
+            return render(request, 'card.html', {'data': obj})
+
+        # if form invalid
+        return render(request, 'form.html', {'form': form})
+
+    # ✅ Handle GET request
+    return redirect('addvoter')
 
 def lst_vote(request):
     data = vote.objects.all()
