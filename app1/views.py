@@ -53,4 +53,10 @@ def lst_vote(request):
 def getvoter(request,id):
         voter = get_object_or_404(vote, id=id)
         return render(request, 'card.html', {'data' : voter})
-    
+
+def delete_vote(request, id):
+    voter = get_object_or_404(vote, id=id)
+
+    if request.method == "POST":
+        voter.delete()
+        return redirect('list_vote')

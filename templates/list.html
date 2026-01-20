@@ -21,6 +21,7 @@
             <th>Address</th>
             <th>voter_id</th>
             <th>Image</th>
+            <th>Delete</th>
         </tr>
         {% for x in data %}
         <tr>
@@ -36,7 +37,9 @@
                     <img src="{{ x.image.url }}" class="profile-img"></a>
                 {% endif %}
             </td>
-            
+            <td>
+                <a href="{% url 'delete_vote' x.id %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this voter card?');">Delete</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
